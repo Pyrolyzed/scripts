@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "" ]; then 
-	echo "Please input a file path"
+	echo "Please input a file path."
 	exit 0
 fi
 
@@ -9,12 +9,12 @@ file=$1
 extension="${file##*.}"
 
 if [ "$extension" != "desktop" ]; then
-	echo "Wrong file extension, please try again on a desktop file"
+	echo "Wrong file extension, please try again on a desktop file."
 	exit 0
 fi
 
 if grep -q Hidden=true "$file"; then
-	echo "File is already hidden. Please try again on a desktop file that isn't hidden"
+	echo "File is already hidden, please try again on a desktop file that isn't hidden."
 	exit 0
 fi
 
@@ -25,5 +25,4 @@ if grep -q Hidden=false "$file"; then
 fi
 
 echo "Hidden=true" >> $file
-echo "File is now hidden"
-exit 0
+echo "File is now hidden."
